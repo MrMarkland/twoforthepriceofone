@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design | Two for the Price of One</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #222;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .design-gallery {
+            text-align: center;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .gallery figure {
+            background: white;
+            padding: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .gallery img {
+            max-width: 100%;
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.3s;
+            border-radius: 5px;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #222;
+            color: white;
+            margin-top: 20px;
+        }
+
+        /* Lightbox Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 80%;
+            border-radius: 5px;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 30px;
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Design Portfolio: Two for the price of one</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="design.html">Design</a></li>
+                <li><a href="results.html">Result</a></li>
+                <li><a href="design.html">Design</a></li>
+                <li><a href="contact.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h2>Welcome to Two For The Price of One - A journey in Optical Innovation </h2>
+            <p>Welcome to our design portfolio, where creativity and science collide. This area highlights our work in advanced optics, namely in the use of a modified Sagnac interferometer to generate re-configurable pairs of orthogonal cylindrical vector beams.</p>
+            <p>By enabling real-time switching between polarization vortex pairs—an invention that improves efficiency in a variety of high-precision applications—our study seeks to push the limits of optical communication, laser micromachining, and particle trapping.</p>
+
+        </section>
+
+        <section class="design-gallery">
+            <h2>Design Showcase</h2>
+            <div class="gallery">
+                <figure>
+                    <img src="images/design1.jpg" alt="Project 1" onclick="openModal(this)">
+                    <figcaption>Project 1: Optical Communication System</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/design2.jpg" alt="Project 2" onclick="openModal(this)">
+                    <figcaption>Project 2: Laser Interferometer Setup</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/design3.jpg" alt="Project 3" onclick="openModal(this)">
+                    <figcaption>Project 3: UI/UX Dashboard for Optoelectronic Devices</figcaption>
+                </figure>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Jordan Markland. All rights reserved.</p>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script>
+        function openModal(imgElement) {
+            let modal = document.getElementById("myModal");
+            let modalImg = document.getElementById("modalImage");
+            modal.style.display = "block";
+            modalImg.src = imgElement.src;
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+    </script>
+</body>
+</html>
