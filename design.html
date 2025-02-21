@@ -5,6 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Design | Two for the Price of One</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .carousel {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .prev { left: 10px; }
+        .next { right: 10px; }
+    </style>
 </head>
 <body>
     <header>
@@ -20,6 +53,16 @@
     </header>
 
     <main>
+        <section class="carousel">
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <div class="carousel-images" id="carouselImages">
+                <img src="images/screenshot1.png" alt="Screenshot 1">
+                <img src="images/screenshot2.png" alt="Screenshot 2">
+                <img src="images/screenshot3.png" alt="Screenshot 3">
+            </div>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </section>
+
         <section class="intro">
             <h2>Welcome to Two For The Price of One - A Journey in Optical Innovation</h2>
             <p>Welcome to our design portfolio, where creativity and science collide. This area highlights our work in advanced optics, namely in the use of a modified Sagnac interferometer to generate re-configurable pairs of orthogonal cylindrical vector beams.</p>
@@ -30,15 +73,15 @@
             <h2>Design Showcase</h2>
             <div class="gallery">
                 <figure>
-                    <img src="images/design1.jpg" alt="Project 1" onclick="openModal(this)">
+                    <img src="images/design1.jpg" alt="Project 1">
                     <figcaption>Project 1: X</figcaption>
                 </figure>
                 <figure>
-                    <img src="images/design2.jpg" alt="Project 2" onclick="openModal(this)">
+                    <img src="images/design2.jpg" alt="Project 2">
                     <figcaption>Project 2: Y</figcaption>
                 </figure>
                 <figure>
-                    <img src="images/design3.jpg" alt="Project 3" onclick="openModal(this)">
+                    <img src="images/design3.jpg" alt="Project 3">
                     <figcaption>Project 3: Z</figcaption>
                 </figure>
             </div>
@@ -49,22 +92,15 @@
         <p>&copy; 2025 Jordan Markland. All rights reserved.</p>
     </footer>
 
-    <!-- Lightbox Modal -->
-    <div id="myModal" class="modal">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="modalImage">
-    </div>
-
     <script>
-        function openModal(imgElement) {
-            let modal = document.getElementById("myModal");
-            let modalImg = document.getElementById("modalImage");
-            modal.style.display = "block";
-            modalImg.src = imgElement.src;
-        }
-
-        function closeModal() {
-            document.getElementById("myModal").style.display = "none";
+        let index = 0;
+        function moveSlide(direction) {
+            const carousel = document.getElementById("carouselImages");
+            const images = carousel.children.length;
+            index += direction;
+            if (index < 0) index = images - 1;
+            if (index >= images) index = 0;
+            carousel.style.transform = `translateX(-${index * 100}%)`;
         }
     </script>
 </body>
