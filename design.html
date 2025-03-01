@@ -37,6 +37,38 @@
 
         .prev { left: 10px; }
         .next { right: 10px; }
+
+        .design-gallery {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .gallery figure {
+            width: 30%;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+        }
+
+        .schematic-description {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
     </style>
 </head>
 <body>
@@ -58,44 +90,37 @@
             <p>By enabling real-time switching between polarization vortex pairs, an innovation that improves efficiency in a variety of high precision applications, our study seeks to push the limits of optical communication, laser micromachining, and particle trapping.</p>
         </section>
         
-        <section class="carousel">
-            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-            <div class="carousel-images" id="carouselImages">
-                <img src="https://raw.githubusercontent.com/MrMarkland/twoforthepriceofone/main/carousel1.jpeg" alt="Carousel 1">
-                <img src="https://raw.githubusercontent.com/MrMarkland/twoforthepriceofone/main/carousel2.jpeg" alt="Carousel 2">
-                <img src="https://raw.githubusercontent.com/MrMarkland/twoforthepriceofone/main/carousel3.jpeg" alt="Carousel 3">
-                <img src="https://raw.githubusercontent.com/MrMarkland/twoforthepriceofone/main/carousel4.jpeg" alt="Carousel 4">
-            </div>
-            <button class="next" onclick="moveSlide(1)">&#10095;</button>
-        </section>
-
         <section class="design-gallery">
             <h2>Design Showcase</h2>
             <div class="gallery">
-                <figure>
+                <figure onclick="showDescription('first')">
                     <img src="https://raw.githubusercontent.com/MrMarkland/twoforthepriceofone/main/firstschematic.png" alt="First Schematic">
-                    <figcaption><strong>First Schematic: Basic Sagnac Interferometer Setup</strong><br>
-                        This schematic represents the initial configuration of the Sagnac interferometer used to generate cylindrical vector beams (CVBs). 
-                        The laser passes through a half-wave plate (HWP) and is split into clockwise (CW) and counterclockwise (CCW) paths by a beam splitter (BS1). 
-                        The Spiral Phase Plate (SPP) and quarter-wave plate (QWP) help to generate polarization vortices, which are analyzed on the screen.
-                    </figcaption>
                 </figure>
-                <figure>
+                <figure onclick="showDescription('second')">
                     <img src="https://raw.githubusercontent.com/MrMarkland/twoforthepriceofone/main/secondschematic.png" alt="Second Schematic">
-                    <figcaption><strong>Second Schematic: Generation of First-Order Vortex Beams</strong><br>
-                        This image demonstrates the formation of radially and azimuthally polarized beams, with distinct polarization vortices observed on the screen. 
-                        The experimental setup remains the same, but the output patterns now show the expected polarization distribution for first-order vortices (l=1). 
-                        The red arrows in the inset images on the screen represent the polarization direction of the generated beams.
-                    </figcaption>
                 </figure>
-                <figure>
+                <figure onclick="showDescription('third')">
                     <img src="https://raw.githubusercontent.com/MrMarkland/twoforthepriceofone/main/thirdschematic.png" alt="Third Schematic">
-                    <figcaption><strong>Third Schematic: Higher-Order Vortex Beam Generation</strong><br>
-                        The schematic shows how the system can be reconfigured to generate higher-order polarization vortices by adjusting the QWP and SPP. 
-                        The screen displays more complex vortex structures, demonstrating the system’s ability to switch between different vector beam pairs. 
-                        This highlights the Sagnac interferometer’s capability to produce tunable cylindrical vector beams for advanced optical applications.
-                    </figcaption>
                 </figure>
+            </div>
+
+            <div id="first" class="schematic-description">
+                <strong>First Schematic: Basic Sagnac Interferometer Setup</strong><br>
+                This schematic represents the initial configuration of the Sagnac interferometer used to generate cylindrical vector beams (CVBs). 
+                The laser passes through a half-wave plate (HWP) and is split into clockwise (CW) and counterclockwise (CCW) paths by a beam splitter (BS1). 
+                The Spiral Phase Plate (SPP) and quarter-wave plate (QWP) help to generate polarization vortices, which are analyzed on the screen.
+            </div>
+            <div id="second" class="schematic-description">
+                <strong>Second Schematic: Generation of First-Order Vortex Beams</strong><br>
+                This image demonstrates the formation of radially and azimuthally polarized beams, with distinct polarization vortices observed on the screen. 
+                The experimental setup remains the same, but the output patterns now show the expected polarization distribution for first-order vortices (l=1). 
+                The red arrows in the inset images on the screen represent the polarization direction of the generated beams.
+            </div>
+            <div id="third" class="schematic-description">
+                <strong>Third Schematic: Higher-Order Vortex Beam Generation</strong><br>
+                The schematic shows how the system can be reconfigured to generate higher-order polarization vortices by adjusting the QWP and SPP. 
+                The screen displays more complex vortex structures, demonstrating the system’s ability to switch between different vector beam pairs. 
+                This highlights the Sagnac interferometer’s capability to produce tunable cylindrical vector beams for advanced optical applications.
             </div>
         </section>
     </main>
@@ -105,14 +130,9 @@
     </footer>
 
     <script>
-        let index = 0;
-        function moveSlide(direction) {
-            const carousel = document.getElementById("carouselImages");
-            const images = carousel.children.length;
-            index += direction;
-            if (index < 0) index = images - 1;
-            if (index >= images) index = 0;
-            carousel.style.transform = `translateX(-${index * 100}%)`;
+        function showDescription(id) {
+            document.querySelectorAll('.schematic-description').forEach(desc => desc.style.display = 'none');
+            document.getElementById(id).style.display = 'block';
         }
     </script>
 </body>
