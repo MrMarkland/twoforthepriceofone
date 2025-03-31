@@ -1,6 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experimental and Theoretical Results in Two for the Price of One</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .carousel {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .prev { left: 10px; }
+        .next { right: 10px; }
+
+        .design-gallery {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .gallery figure {
+            width: 30%;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+        }
+
+        .schematic-description {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 15px;
+            background-color: #222;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            border-radius: 8px;
+            max-width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Experimental and Theoretical Results</h1>
+        <h1>Experimental and Theoretical Results in Two for the Price of One</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="design.html">Design</a></li>
+                <li><a href="results.html">Results</a></li>
+                <li><a href="contact.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
 
 
