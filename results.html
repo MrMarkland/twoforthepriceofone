@@ -6,21 +6,17 @@
     <title>Experimental and Theoretical Results in Two for the Price of One</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-
-        .prev, .next {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: black;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
+       .image-container {
+            text-align: center; /* Center the image */
+            margin: 20px 0; /* Add spacing above and below */
         }
-
-        .prev { left: 10px; }
-        .next { right: 10px; }
-
+        .image-container img {
+            max-width: 60%; /* Resize the image to 60% of the container width */
+            height: auto; /* Maintain aspect ratio */
+            display: block;
+            margin: 0 auto; /* Ensures centering */
+            border: 2px solid #000; /* Optional: Add a border */
+        }
     </style>
 </head>
 <body>
