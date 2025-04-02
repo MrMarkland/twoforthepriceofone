@@ -6,17 +6,74 @@
     <title>Experimental and Theoretical Results in Two for the Price of One</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-       .profile img {
+        .profile img {
             width: 350px;
             height: auto;
             object-fit: contain;
             border-radius: 10px;
         }
+
+        body {
+            background-color: #111;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            padding: 20px;
+            background-color: #222;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #00d8ff;
+            text-decoration: none;
+        }
+
+        .banner h2 {
+            text-align: center;
+            margin: 40px 0 20px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            padding: 20px;
+        }
+
+        .profile {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 12px;
+            width: 360px;
+            text-align: center;
+        }
+
+        .profile ul {
+            text-align: left;
+            padding-left: 20px;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1> Experimental and Theoretical findings : Two for the Price of One </h1>
+        <h1>Experimental and Theoretical Findings: Two for the Price of One</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -26,11 +83,15 @@
             </ul>
         </nav>
     </header>
+
     <main>
-        <div class="banner"><h2>Our Results</h2></div>
+        <div class="banner">
+            <h2>Our Results</h2>
+        </div>
+
         <div class="container">
             <div class="profile">
-                <img src="Experimental_value_L_1.png" alt="L = 1">
+                <img src="images/Experimental_value_L_1.png" alt="L = 1">
                 <h2>L = 1</h2>
                 <ul>
                     <li>Shows output for the order L = 1 vortex using a HeNe laser and Sagnac interferometer.</li>
@@ -39,7 +100,7 @@
                 </ul>
             </div>
             <div class="profile">
-                <img src="Theoretical_value_L_1.png" alt="L = 1">
+                <img src="images/Theoretical_value_L_1.png" alt="L = 1">
                 <h2>L = 1</h2>
                 <ul>
                     <li>Theoretical model predicts two orthogonal CVBs: saddle or hybrid vortex forms.</li>
@@ -48,9 +109,10 @@
                 </ul>
             </div>
         </div>
+
         <div class="container">
             <div class="profile">
-                <img src="Experimental_value_L_2.png" alt="L = 2">
+                <img src="images/Experimental_value_L_2.png" alt="L = 2">
                 <h2>L = 2</h2>
                 <ul>
                     <li>Order L = 2 vortex ring generated via SPP and QWP phase manipulation.</li>
@@ -59,7 +121,7 @@
                 </ul>
             </div>
             <div class="profile">
-                <img src="Theoretical_value_L_2.png" alt="L = 2">
+                <img src="images/Theoretical_value_L_2.png" alt="L = 2">
                 <h2>L = 2</h2>
                 <ul>
                     <li>Model uses adjusted QWP angles to produce alternate cylindrical vector beams.</li>
@@ -68,9 +130,10 @@
                 </ul>
             </div>
         </div>
+
         <div class="container">
             <div class="profile">
-                <img src="Experimental_value_L_4.png" alt="L = 4">
+                <img src="images/Experimental_value_L_4.png" alt="L = 4">
                 <h2>L = 4</h2>
                 <ul>
                     <li>Higher-order vortex field (L = 4) formed through use of Viavi phase plate.</li>
@@ -79,7 +142,7 @@
                 </ul>
             </div>
             <div class="profile">
-                <img src="Theoretical_value_L_4.png" alt="L = 4">
+                <img src="images/Theoretical_value_L_4.png" alt="L = 4">
                 <h2>L = 4</h2>
                 <ul>
                     <li>Theoretical structure predicts eight-lobed interference patterns for L = 4.</li>
